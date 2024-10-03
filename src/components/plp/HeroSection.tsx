@@ -3,7 +3,7 @@ import RightBreadcrumb from "@/public/assets/icons/RightBreadcrumb";
 
 const HeroSection = () => {
   return (
-    <div className='h-96 bg-[url("/assets/images/HeroBackground.png")] bg-no-repeat bg-cover flex flex-col justify-center items-center gap-4'>
+    <div className='h-[378px] bg-[url("/assets/images/HeroBackground.png")] bg-no-repeat bg-cover flex flex-col justify-center items-center gap-4'>
       <Typography variant="h1" className="font-poppins text-5xl font-medium">
         Shop
       </Typography>
