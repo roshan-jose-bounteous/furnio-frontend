@@ -1,4 +1,3 @@
-import { FC } from "react";
 import Typography from "../common/Typography";
 import RightBreadcrumb from "@/public/assets/icons/RightBreadcrumb";
 
