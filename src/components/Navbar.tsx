@@ -7,9 +7,8 @@ import logo from "@/public/assets/images/Logo.png";
 import React from "react";
 import Link from "next/link";
 
-type Props = {};
 
-const Navbar = (props: Props) => {
+const Navbar = () => {
   return (
     <div>
       <nav className="bg-white p-4">
