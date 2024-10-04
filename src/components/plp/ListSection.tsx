@@ -157,7 +157,7 @@ const formatCurrency = (price: number) => {
 
 const ListSection = () => {
   return (
-    <div className="flex justify-center mx-auto px-4 py-8">
+    <div className="flex justify-center px-36 py-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {productDetails.map((product) => (
           <div key={product.id} className="">

@@ -8,7 +8,7 @@ import Button from "../common/Button";
 
 const FiltersTab = () => {
   return (
-    <div className="bg-[#F9F1E7] flex flex-row justify-between items-center px-44 py-5">
+    <div className="bg-[#F9F1E7] flex flex-row justify-between items-center px-36 py-5">
       <div className="flex flex-row items-center justify-between gap-7">
         <div className="flex flex-row items-center justify-between gap-3">
           <Filter />
