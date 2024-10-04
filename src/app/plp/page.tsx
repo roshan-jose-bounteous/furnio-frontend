@@ -1,16 +1,16 @@
-import Navbar from "@/components/Navbar";
-import ListSection from "@/components/plp/ListSection";
-import FiltersTab from "@/components/plp/FiltersTab";
-import HeroSection from "@/components/plp/HeroSection";
+import ProductList from "@/components/plp/ProductList/ProductList";
+import FiltersTab from "@/components/plp/FiltersTab/FiltersTab";
+import HeroSection from "@/components/plp/HeroSection/HeroSection";
 import React from "react";
+import PreFooter from "@/components/plp/PreFooter/PreFooter";
 
 const page = () => {
   return (
     <>
-      <Navbar />
       <HeroSection />
       <FiltersTab />
-      <ListSection />
+      <ProductList />
+      <PreFooter />
     </>
   );
 };

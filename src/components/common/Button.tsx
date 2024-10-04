@@ -2,23 +2,46 @@ import React from "react";
 import { ReactNode } from "react";
 
 type ButtonProps = {
-  variant: "Pagination" | "AddToCart" | "SortBy";
-  children: ReactNode;
+  variant:
+    | "Pagination"
+    | "AddToCart"
+    | "SortBy"
+    | "Subscribe"
+    | "Sizes"
+    | "Colors"
+    | "Quantity"
+    | "Buy";
+  children?: ReactNode;
+  text?: String;
   className?: string; // Custom class for styling
 };
 
-const Button = ({ variant, children, className = "" }: ButtonProps) => {
+const Button = ({
+  variant,
+  text = "",
+  children,
+  className = "",
+}: ButtonProps) => {
   // Define styles for each variant
-  const baseStyles = "py-2 px-4  focus:outline-none transition duration-300";
+  const baseStyles = " focus:outline-none transition duration-300";
 
   const variantStyles = {
-    Pagination: "bg-gray-200 text-gray-700 hover:bg-gray-300",
-    AddToCart: "bg-green-500 text-white hover:bg-green-600",
-    SortBy: "bg-white text-[#9F9F9F]",
+    Pagination:
+      "bg-[#F9F1E7] hover:bg-[#B88E2F] py-2 px-4 rounded-lg text-lg hover:text-white font-poppins",
+    Colors: "rounded-full px-4 py-4",
+    Quantity: "font-poppins border-black border rounded-md px-2 py-2",
+    Buy: "font-poppins text-lg border-black border px-4 py-2 rounded-lg",
+    Sizes:
+      "bg-[#F9F1E7] hover:bg-[#B88E2F] py-2 px-3 rounded-lg text-sm hover:text-white font-poppins",
+    AddToCart: "bg-white text-[#B88E2F] font-poppins px-6 py-2 font-semibold ",
+    SortBy: " py-2 px-4 bg-white text-[#9F9F9F]",
+    Subscribe:
+      "text-sm font-medium font-poppins px-0 py-4 uppercase text-black border-b border-black pb-1 hover:text-gray-800 transition-colors ",
   };
 
   return (
     <button className={`${baseStyles} ${variantStyles[variant]} ${className}`}>
+      {text}
       {children}
     </button>
   );
