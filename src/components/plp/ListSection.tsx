@@ -188,21 +188,21 @@ const ListSection = () => {
               </Typography>
               <Typography
                 variant="h3"
-                className="text-gray-500 font-lg font-medium font-poppins"
+                className="text-gray-500 font-medium font-poppins"
               >
                 {product.description}
               </Typography>
               <div className="flex flex-row justify-between items-center">
                 <Typography
                   variant="p"
-                  className="text-xl font-semibold text-black font-poppins  "
+                  className="text-lg font-semibold text-black font-poppins  "
                 >
                   {formatCurrency(product.price)}
                 </Typography>
                 {product.originalPrice && (
                   <Typography
                     variant="p"
-                    className="line-through text-gray-500 pr-2 font-poppins"
+                    className="line-through text-sm text-gray-500 pr-2 font-poppins"
                   >
                     {formatCurrency(product.originalPrice)}
                   </Typography>

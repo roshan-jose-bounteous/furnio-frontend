@@ -7,7 +7,6 @@ import logo from "@/public/assets/images/Logo.png";
 import React from "react";
 import Link from "next/link";
 
-
 const Navbar = () => {
   return (
     <div>
@@ -22,7 +21,7 @@ const Navbar = () => {
               className="" // Add some margin to the right
             />
             <p className="text-black text-3xl font-bold font-montserrat">
-              Funiro
+              Furnio
             </p>
           </div>
           <div className="flex gap-14 items-center">
