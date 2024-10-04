@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import ListSection from "@/components/plp/ListSection";
 import FiltersTab from "@/components/plp/FiltersTab";
 import HeroSection from "@/components/plp/HeroSection";
 import React from "react";
@@ -9,6 +10,7 @@ const page = () => {
       <Navbar />
       <HeroSection />
       <FiltersTab />
+      <ListSection />
     </>
   );
 };
