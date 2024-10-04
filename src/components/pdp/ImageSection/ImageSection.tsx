@@ -1,8 +1,6 @@
 "use client";
 import React, { useState } from "react";
 
-type ImageSectionProps = {};
-
 // List of images from public directory
 const images = [
   "/assets/images/sofa1.png",
@@ -11,7 +9,7 @@ const images = [
   "/assets/images/sofa4.png",
 ];
 
-const ImageSection = (props: ImageSectionProps) => {
+const ImageSection = () => {
   const [selectedImage, setSelectedImage] = useState(images[0]);
 
   return (

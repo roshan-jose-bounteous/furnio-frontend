@@ -3,9 +3,7 @@ import Typography from "../../common/Typography";
 import RightBreadcrumb from "@/public/assets/icons/RightBreadcrumb";
 import VerticalDividerLine from "@/public/assets/icons/VerticalDividerLine";
 
-type Props = {};
-
-const Breadcrumb = (props: Props) => {
+const Breadcrumb = () => {
   return (
     <div className="bg-[#F9F1E7] flex flex-row justify-start items-center gap-5 py-8 px-40">
       <Typography

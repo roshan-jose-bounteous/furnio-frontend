@@ -12,7 +12,7 @@ type ButtonProps = {
     | "Quantity"
     | "Buy";
   children?: ReactNode;
-  text?: String;
+  text?: string;
   className?: string; // Custom class for styling
 };
 
