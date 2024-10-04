@@ -1,6 +1,5 @@
 import React from "react";
 import Typography from "../common/Typography";
-import Image from "next/image";
 
 const productDetails = [
   {
@@ -168,11 +167,6 @@ const ListSection = () => {
                 alt={product.productName}
                 className="w-full h-80 object-cover"
               />
-              {/* <Image
-                src={product.imageUrl}
-                alt={product.productName}
-                className="w-full h-80 object-cover"
-              /> */}
               {product.discount && (
                 <div
                   className={`absolute top-2 right-2 text-white text-xs rounded-full px-1 py-3 font-poppins ${
