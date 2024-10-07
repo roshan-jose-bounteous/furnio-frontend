@@ -1,9 +1,8 @@
 import Image from "next/image";
 import React from "react";
 
-type Props = {};
 
-const AdditionalImages = (props: Props) => {
+const AdditionalImages = () => {
   return (
     <div className="flex flex-row py-4 gap-4 w-full justify-center items-center">
       <div className="flex items-center justify-center bg-[#F5EDE3] rounded-md h-96 w-full max-w-lg">
