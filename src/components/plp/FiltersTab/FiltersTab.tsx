@@ -6,17 +6,7 @@ import GridFilter from "@/public/assets/icons/GridFilter";
 import ListFilter from "@/public/assets/icons/ListFilter";
 import VerticalDividerLine from "@/public/assets/icons/VerticalDividerLine";
 import ProductList from "@/components/plp/ProductList/ProductList";
-
-// Define the Product type
-type Product = {
-  id: number;
-  productName: string;
-  description: string;
-  price: number;
-  originalPrice?: number | null;
-  discount?: string | null;
-  imageUrl: string;
-};
+import { Product } from "@/types/types";
 
 const FiltersTab = () => {
   const [isGridView, setIsGridView] = useState(true);

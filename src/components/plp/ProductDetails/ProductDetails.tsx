@@ -1,13 +1,7 @@
 // src/components/ProductDetails.tsx
 import React from "react";
 import Typography from "@/components/common/Typography";
-
-type ProductDetailsProps = {
-  productName: string;
-  description: string;
-  price: number;
-  originalPrice?: number | null;
-};
+import { ProductDetailsProps } from "@/types/types";
 
 const formatCurrency = (price: number) => {
   return price.toLocaleString("id-ID", {

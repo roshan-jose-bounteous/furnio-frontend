@@ -1,15 +1,14 @@
 // src/components/ProductImage.tsx
 import React from "react";
 import Image from "next/image";
+import { ProductImageProps } from "@/types/types";
 
-type ProductImageProps = {
-  imageUrl: string;
-  productName: string;
-  width?:number;
-  height?:number;
-};
-
-const ProductImage = ({ imageUrl, productName,width, height }: ProductImageProps) => {
+const ProductImage = ({
+  imageUrl,
+  productName,
+  width,
+  height,
+}: ProductImageProps) => {
   return (
     <Image
       src={imageUrl}

@@ -1,8 +1,5 @@
 import React from "react";
-
-type ProductDiscountProps = {
-  discount: string;
-};
+import { ProductDiscountProps } from "@/types/types";
 
 const ProductDiscount = ({ discount }: ProductDiscountProps) => {
   return (

@@ -2,22 +2,7 @@ import React from "react";
 import { productDetails } from "@/data/productDetails";
 import ProductCard from "@/components/common/ProductCard";
 import Pagination from "../Pagination/Pagination";
-
-type Product = {
-  id: number;
-  productName: string;
-  description: string;
-  price: number;
-  originalPrice?: number | null;
-  discount?: string | null;
-  imageUrl: string;
-};
-
-type ProductListProps = {
-  isGridView: boolean;
-  showCount: number;
-  handleSort: (products: Product[]) => Product[];
-};
+import { ProductListProps } from "@/types/types";
 
 const ProductList = ({
   isGridView,
