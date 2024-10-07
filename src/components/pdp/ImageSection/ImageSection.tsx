@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 
 // List of images from public directory
 const images = [
@@ -17,9 +18,11 @@ const ImageSection = () => {
       {/* Sidebar with smaller images */}
       <div className="flex flex-col space-y-4">
         {images.map((img, index) => (
-          <img
+          <Image
             key={index}
             src={img}
+            width={80}
+            height={64}
             alt={`Thumbnail ${index + 1}`}
             className={`w-20 h-16 bg-[#F5EDE3] rounded-md object-contain cursor-pointer border-2 ${
               selectedImage === img ? "border-black" : "border-gray-200"
@@ -31,8 +34,11 @@ const ImageSection = () => {
 
       {/* Main image */}
       <div className="flex items-center justify-center bg-[#F5EDE3] rounded-md h-96 w-full max-w-lg">
-        <img
+        <Image
           src={selectedImage}
+          width={0}
+          height={0}
+          sizes="100vw"
           alt="Main Product"
           className="w-full h-full object-contain rounded-md"
         />

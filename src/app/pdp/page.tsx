@@ -7,6 +7,7 @@ const page = () => {
     <div>
       <Breadcrumb />
       <Description />
+      <div className="border-1 border-b border-[#D9D9D9]" />
     </div>
   );
 };

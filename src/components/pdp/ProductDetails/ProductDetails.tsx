@@ -1,5 +1,8 @@
 import Button from "@/components/common/Button";
 import Typography from "@/components/common/Typography";
+import FacebookIcon from "@/public/assets/icons/FacebookIcon";
+import LinkedinIcon from "@/public/assets/icons/LinkedinIcon";
+import TwitterIcon from "@/public/assets/icons/TwitterIcon";
 import VerticalDividerLine from "@/public/assets/icons/VerticalDividerLine";
 import YellowStar from "@/public/assets/icons/YellowStar";
 import React from "react";
@@ -57,7 +60,7 @@ const ProductDetails = () => {
         <Button variant="Colors" className="bg-black" />
         <Button variant="Colors" className="bg-[#B88E2F]" />
       </div>
-      <div className="flex flex-row justify-start items-center gap-4">
+      <div className="flex flex-row justify-start items-center gap-4 py-2">
         <Button
           variant="Quantity"
           className="flex flex-row justify-between gap-5"
@@ -68,6 +71,30 @@ const ProductDetails = () => {
         </Button>
         <Button variant="Buy" className="" text="Add To Cart" />
         <Button variant="Buy" className="" text="+ Compare" />
+      </div>
+      <div className=" border-b border-[#D9D9D9] border-1 my-6" />
+      <div className="font-poppins py-2 flex flex-col gap-2 text-[#9F9F9F]">
+        <div className="flex flex-row gap-2">
+          <p className="min-w-[100px]">SKU</p>
+          <p>: SS001</p>
+        </div>
+        <div className="flex flex-row gap-2">
+          <p className="min-w-[100px]">Category</p>
+          <p>: Sofas</p>
+        </div>
+        <div className="flex flex-row gap-2">
+          <p className="min-w-[100px]">Tags</p>
+          <p>: Sofa, Chair, Home, Shop</p>
+        </div>
+        <div className="flex flex-row gap-2">
+          <p className="min-w-[100px]">Share</p>
+          <p>:</p>
+          <div className="flex flex-row gap-2">
+            <FacebookIcon />
+            <LinkedinIcon />
+            <TwitterIcon />
+          </div>
+        </div>
       </div>
     </div>
   );
