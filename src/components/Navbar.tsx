@@ -167,7 +167,7 @@ const Navbar = () => {
           <Link className="font-poppins font-medium text-lg" href="/Home">
             Home
           </Link>
-          <Link className="font-poppins font-medium text-lg" href="/Shop">
+          <Link className="font-poppins font-medium text-lg" href="/plp">
             Shop
           </Link>
           <Link className="font-poppins font-medium text-lg" href="/About">
