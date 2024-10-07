@@ -1,3 +1,4 @@
+"use client";
 import Button from "@/components/common/Button";
 import Typography from "@/components/common/Typography";
 import FacebookIcon from "@/public/assets/icons/FacebookIcon";
@@ -5,9 +6,11 @@ import LinkedinIcon from "@/public/assets/icons/LinkedinIcon";
 import TwitterIcon from "@/public/assets/icons/TwitterIcon";
 import VerticalDividerLine from "@/public/assets/icons/VerticalDividerLine";
 import YellowStar from "@/public/assets/icons/YellowStar";
-import React from "react";
+import React, { useState } from "react";
 
 const ProductDetails = () => {
+  const [selectedSize, setSelectedSize] = useState<string | null>(null);
+  const [selectedColor, setSelectedColor] = useState<string | null>(null);
   return (
     <div className="flex flex-col gap-3 py-2 w-1/2">
       <Typography
@@ -46,9 +49,24 @@ const ProductDetails = () => {
         text="Size"
       />
       <div className="flex flex-row justify-start items-center gap-3">
-        <Button variant="Sizes" text="L" />
-        <Button variant="Sizes" text="XL" />
-        <Button variant="Sizes" text="XS" />
+        <Button
+          variant="Sizes"
+          text="L"
+          className={`${selectedSize == "L" ? "bg-[#B88E2F]" : ""}`}
+          onClick={() => setSelectedSize("L")}
+        />
+        <Button
+          variant="Sizes"
+          text="XL"
+          className={`${selectedSize == "XL" ? "bg-[#B88E2F]" : ""}`}
+          onClick={() => setSelectedSize("XL")}
+        />
+        <Button
+          variant="Sizes"
+          text="XS"
+          className={`${selectedSize == "XS" ? "bg-[#B88E2F]" : ""}`}
+          onClick={() => setSelectedSize("XS")}
+        />
       </div>
       <Typography
         variant="p"
@@ -56,9 +74,27 @@ const ProductDetails = () => {
         text="Color"
       />
       <div className="flex flex-row justify-start items-center gap-4">
-        <Button variant="Colors" className="bg-[#816DFA]" />
-        <Button variant="Colors" className="bg-black" />
-        <Button variant="Colors" className="bg-[#B88E2F]" />
+        <Button
+          variant="Colors"
+          className={`bg-[#816DFA] ${
+            selectedColor == "purple" ? "border-2 border-black" : ""
+          }`}
+          onClick={() => setSelectedColor("purple")}
+        />
+        <Button
+          variant="Colors"
+          className={`bg-black ${
+            selectedColor == "black" ? "border-2 border-black" : ""
+          }`}
+          onClick={() => setSelectedColor("black")}
+        />
+        <Button
+          variant="Colors"
+          className={`bg-[#B88E2F] ${
+            selectedColor == "orange" ? "border-2 border-black" : ""
+          }`}
+          onClick={() => setSelectedColor("orange")}
+        />
       </div>
       <div className="flex flex-row justify-start items-center gap-4 py-2">
         <Button
@@ -75,20 +111,21 @@ const ProductDetails = () => {
       <div className=" border-b border-[#D9D9D9] border-1 my-6" />
       <div className="font-poppins py-2 flex flex-col gap-2 text-[#9F9F9F]">
         <div className="flex flex-row gap-2">
-          <p className="min-w-[100px]">SKU</p>
-          <p>: SS001</p>
+          <Typography variant="p" text="SKU" className="min-w-[100px]" />
+          <Typography variant="p" text=": SS001" />
         </div>
         <div className="flex flex-row gap-2">
-          <p className="min-w-[100px]">Category</p>
-          <p>: Sofas</p>
+          <Typography variant="p" text="Category" className="min-w-[100px]" />
+          <Typography variant="p" text=": Sofas" />
         </div>
         <div className="flex flex-row gap-2">
-          <p className="min-w-[100px]">Tags</p>
-          <p>: Sofa, Chair, Home, Shop</p>
+          <Typography variant="p" text="Tags" className="min-w-[100px]" />
+          <Typography variant="p" text=": Sofa, Chair, Home, Shop" />
         </div>
         <div className="flex flex-row gap-2">
-          <p className="min-w-[100px]">Share</p>
-          <p>:</p>
+          <Typography variant="p" text="Share" className="min-w-[100px]" />
+          <Typography variant="p" text=":" />
+
           <div className="flex flex-row gap-2">
             <FacebookIcon />
             <LinkedinIcon />

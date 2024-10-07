@@ -1,6 +1,6 @@
 import React from "react";
 import { productDetails } from "@/data/productDetails";
-import ProductCard from "@/components/plp/ProductCard/ProductCard";
+import ProductCard from "@/components/common/ProductCard";
 import Pagination from "../Pagination/Pagination";
 
 const ProductList = () => {

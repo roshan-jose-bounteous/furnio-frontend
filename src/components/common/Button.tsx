@@ -10,9 +10,11 @@ type ButtonProps = {
     | "Sizes"
     | "Colors"
     | "Quantity"
+    | "Related"
     | "Buy";
   children?: ReactNode;
   text?: string;
+  onClick?: () => void;
   className?: string; // Custom class for styling
 };
 
@@ -21,6 +23,7 @@ const Button = ({
   text = "",
   children,
   className = "",
+  onClick,
 }: ButtonProps) => {
   // Define styles for each variant
   const baseStyles = " focus:outline-none transition duration-300";
@@ -29,6 +32,8 @@ const Button = ({
     Pagination:
       "bg-[#F9F1E7] hover:bg-[#B88E2F] py-2 px-4 rounded-lg text-lg hover:text-white font-poppins",
     Colors: "rounded-full px-4 py-4",
+    Related:
+      "bg-white text-[#B88E2F] font-poppins px-6 py-2 font-semibold border-[#B88E2F] border-2 ",
     Quantity: "font-poppins border-black border rounded-md px-2 py-2",
     Buy: "font-poppins text-lg border-black border px-4 py-2 rounded-lg",
     Sizes:
@@ -40,7 +45,10 @@ const Button = ({
   };
 
   return (
-    <button className={`${baseStyles} ${variantStyles[variant]} ${className}`}>
+    <button
+      className={`${baseStyles} ${variantStyles[variant]} ${className}`}
+      onClick={onClick}
+    >
       {text}
       {children}
     </button>
