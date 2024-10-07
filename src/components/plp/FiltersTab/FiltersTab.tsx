@@ -7,18 +7,24 @@ import ListFilter from "@/public/assets/icons/ListFilter";
 import VerticalDividerLine from "@/public/assets/icons/VerticalDividerLine";
 import ProductList from "@/components/plp/ProductList/ProductList";
 
+// Define the Product type
+type Product = {
+  id: number;
+  productName: string;
+  description: string;
+  price: number;
+  originalPrice?: number | null;
+  discount?: string | null;
+  imageUrl: string;
+};
+
 const FiltersTab = () => {
-  // State for managing grid or list view
   const [isGridView, setIsGridView] = useState(true);
-
-  // State for managing how many products to show
   const [showCount, setShowCount] = useState(16);
-
-  // State for managing sorting order
   const [sortBy, setSortBy] = useState("default");
 
-  // Sorting logic based on price
-  const handleSort = (products: any[]) => {
+  // Update handleSort to use the Product type
+  const handleSort = (products: Product[]) => {
     if (sortBy === "ascending") {
       return [...products].sort((a, b) => a.price - b.price);
     } else if (sortBy === "descending") {
@@ -30,7 +36,7 @@ const FiltersTab = () => {
   return (
     <div>
       {/* Filter and View Options */}
-      <div className="bg-[#F9F1E7] flex flex-col md:flex-row justify-center  md:justify-between items-center px-10 md:px-36 py-5 w-full gap-4 md:gap-0">
+      <div className="bg-[#F9F1E7] flex flex-col md:flex-row justify-center md:justify-between items-center px-10 md:px-36 py-5 w-full gap-4 md:gap-0">
         <div className="flex flex-row items-center justify-between gap-7">
           <div className="flex flex-row items-center justify-between gap-3">
             <Filter />
@@ -98,7 +104,6 @@ const FiltersTab = () => {
       <ProductList
         isGridView={isGridView}
         showCount={showCount}
-        sortBy={sortBy}
         handleSort={handleSort}
       />
     </div>
