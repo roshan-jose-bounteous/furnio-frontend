@@ -7,7 +7,7 @@ import React from "react";
 
 const PreFooter = () => {
   return (
-    <div className="bg-[#FAF3EA] flex flex-row justify-between items-center px-28 py-20">
+    <div className="bg-[#FAF3EA] flex flex-col  md:flex-row items-start  md:justify-between md:items-center px-10 md:px-28 py-20 gap-5 md:gap-0">
       <div className="flex flex-row gap-3">
         <Trophy />
         <div className="flex flex-col gap-1 justify-between">

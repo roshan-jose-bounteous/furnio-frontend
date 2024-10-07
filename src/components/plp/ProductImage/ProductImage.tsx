@@ -5,15 +5,17 @@ import Image from "next/image";
 type ProductImageProps = {
   imageUrl: string;
   productName: string;
+  width?:number;
+  height?:number;
 };
 
-const ProductImage = ({ imageUrl, productName }: ProductImageProps) => {
+const ProductImage = ({ imageUrl, productName,width, height }: ProductImageProps) => {
   return (
     <Image
       src={imageUrl}
       alt={productName}
-      width={1440}
-      height={328}
+      width={width}
+      height={height}
       className="w-full h-80 object-cover"
     />
   );

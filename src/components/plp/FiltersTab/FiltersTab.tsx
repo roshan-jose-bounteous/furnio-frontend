@@ -1,50 +1,106 @@
+"use client";
+import React, { useState } from "react";
 import Filter from "@/public/assets/icons/Filter";
-import React from "react";
 import Typography from "@/components/common/Typography";
 import GridFilter from "@/public/assets/icons/GridFilter";
 import ListFilter from "@/public/assets/icons/ListFilter";
 import VerticalDividerLine from "@/public/assets/icons/VerticalDividerLine";
-import Button from "@/components/common/Button";
+import ProductList from "@/components/plp/ProductList/ProductList";
 
 const FiltersTab = () => {
+  // State for managing grid or list view
+  const [isGridView, setIsGridView] = useState(true);
+
+  // State for managing how many products to show
+  const [showCount, setShowCount] = useState(16);
+
+  // State for managing sorting order
+  const [sortBy, setSortBy] = useState("default");
+
+  // Sorting logic based on price
+  const handleSort = (products: any[]) => {
+    if (sortBy === "ascending") {
+      return [...products].sort((a, b) => a.price - b.price);
+    } else if (sortBy === "descending") {
+      return [...products].sort((a, b) => b.price - a.price);
+    }
+    return products; // default
+  };
+
   return (
-    <div className="bg-[#F9F1E7] flex flex-row justify-between items-center px-36 py-5">
-      <div className="flex flex-row items-center justify-between gap-7">
-        <div className="flex flex-row items-center justify-between gap-3">
-          <Filter />
+    <div>
+      {/* Filter and View Options */}
+      <div className="bg-[#F9F1E7] flex flex-col md:flex-row justify-center  md:justify-between items-center px-10 md:px-36 py-5 w-full gap-4 md:gap-0">
+        <div className="flex flex-row items-center justify-between gap-7">
+          <div className="flex flex-row items-center justify-between gap-3">
+            <Filter />
+            <Typography
+              variant="p"
+              className="font-poppins text-xl"
+              text="Filter"
+            />
+          </div>
+          {/* Toggle between Grid and List view */}
+          <button onClick={() => setIsGridView(true)}>
+            <GridFilter />
+          </button>
+          <button onClick={() => setIsGridView(false)}>
+            <ListFilter />
+          </button>
+          <VerticalDividerLine />
           <Typography
             variant="p"
-            className="font-poppins text-xl"
-            text="Filter"
+            className="font-poppins font-normal text-xs md:text-lg"
+            text={`Showing 1-${showCount} of 32 results`}
           />
         </div>
-        <GridFilter />
-        <ListFilter />
-        <VerticalDividerLine />
-        <Typography
-          variant="p"
-          className="font-poppins font-normal"
-          text="Showing 1-16 of 32 results"
-        />
+
+        {/* Show Dropdown */}
+        <div className="flex flex-row items-center justify-between gap-7">
+          <div className="flex flex-row items-center justify-between gap-3">
+            <Typography
+              variant="p"
+              className="font-poppins text-sm md:text-xl"
+              text="Show"
+            />
+            <select
+              className="bg-white p-1 md:p-3 text-xs md:text-md font-poppins"
+              value={showCount}
+              onChange={(e) => setShowCount(Number(e.target.value))}
+            >
+              <option value={16}>16</option>
+              <option value={8}>8</option>
+              <option value={32}>32</option>
+            </select>
+          </div>
+
+          {/* Sort By Dropdown */}
+          <div className="flex flex-row items-center justify-between gap-3">
+            <Typography
+              variant="p"
+              className="font-poppins text-sm md:text-xl"
+              text="Sort by"
+            />
+            <select
+              className="bg-white p-1 md:p-3 text-xs md:text-md font-poppins"
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+            >
+              <option value="default">Default</option>
+              <option value="ascending">Price: Low to High</option>
+              <option value="descending">Price: High to Low</option>
+            </select>
+          </div>
+        </div>
       </div>
-      <div className="flex flex-row items-center justify-between gap-7">
-        <div className="flex flex-row items-center justify-between gap-3">
-          <Typography
-            variant="p"
-            className="font-poppins text-xl"
-            text="Show"
-          />
-          <Button variant="SortBy" className="bg-white p-3" text="16" />
-        </div>
-        <div className="flex flex-row items-center justify-between gap-3">
-          <Typography
-            variant="p"
-            className="font-poppins text-xl"
-            text="Sort by"
-          />
-          <Button variant="SortBy" className="pr-12" text="Default" />
-        </div>
-      </div>
+
+      {/* Product List */}
+      <ProductList
+        isGridView={isGridView}
+        showCount={showCount}
+        sortBy={sortBy}
+        handleSort={handleSort}
+      />
     </div>
   );
 };

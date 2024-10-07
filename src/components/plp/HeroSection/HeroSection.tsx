@@ -6,7 +6,7 @@ const HeroSection = () => {
     <div className='h-[328px] bg-[url("/assets/images/HeroBackground.png")] bg-no-repeat bg-cover flex flex-col justify-center items-center gap-4'>
       <Typography
         variant="h1"
-        className="font-poppins text-5xl font-medium"
+        className="font-poppins text-3xl md:text-5xl font-medium"
         text="Shop"
       />
 

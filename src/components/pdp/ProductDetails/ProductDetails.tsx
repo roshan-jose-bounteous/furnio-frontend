@@ -12,7 +12,7 @@ const ProductDetails = () => {
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
   return (
-    <div className="flex flex-col gap-3 py-2 w-1/2">
+    <div className="flex flex-col gap-3 py-2 w-full md:w-1/2">
       <Typography
         variant="h1"
         className="font-poppins text-4xl"
@@ -96,17 +96,17 @@ const ProductDetails = () => {
           onClick={() => setSelectedColor("orange")}
         />
       </div>
-      <div className="flex flex-row justify-start items-center gap-4 py-2">
+      <div className="flex flex-col md:flex-row justify-start items-center gap-4 py-2">
         <Button
           variant="Quantity"
-          className="flex flex-row justify-between gap-5"
+          className="flex flex-row justify-between gap-5 w-3/5 md:w-1/5"
         >
           <Typography variant="p" text="-" />
           <Typography variant="p" text="1" />
           <Typography variant="p" text="+" />
         </Button>
-        <Button variant="Buy" className="" text="Add To Cart" />
-        <Button variant="Buy" className="" text="+ Compare" />
+        <Button variant="Buy" className="w-3/5 md:w-2/5" text="Add To Cart" />
+        <Button variant="Buy" className="w-3/5 md:w-2/5" text="+ Compare" />
       </div>
       <div className=" border-b border-[#D9D9D9] border-1 my-6" />
       <div className="font-poppins py-2 flex flex-col gap-2 text-[#9F9F9F]">

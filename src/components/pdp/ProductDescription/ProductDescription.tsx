@@ -3,10 +3,8 @@ import Typography from "@/components/common/Typography";
 import React, { useState } from "react";
 
 const ProductDescription = () => {
-  // Define states for active tab and content
   const [activeTab, setActiveTab] = useState("Description");
 
-  // Function to render content based on active tab
   const renderContent = () => {
     switch (activeTab) {
       case "Description":
@@ -58,15 +56,15 @@ const ProductDescription = () => {
   };
 
   return (
-    <div className="w-full py-10    ">
+    <div className="w-full py-10">
       {/* Tabs */}
-      <div className="flex flex-row justify-center gap-10 font-poppins text-2xl">
+      <div className="flex flex-row justify-center gap-3 md:gap-10 font-poppins">
         <button
           className={`${
             activeTab === "Description"
-              ? "text-black font-medium"
+              ? "text-black font-medium border-b-2 border-black"
               : "text-[#9F9F9F] font-light"
-          } text-lg font-semibold`}
+          } text-base md:text-2xl font-semibold`}
           onClick={() => setActiveTab("Description")}
         >
           Description
@@ -75,9 +73,9 @@ const ProductDescription = () => {
         <button
           className={`${
             activeTab === "Additional Information"
-              ? "text-black font-medium"
+              ? "text-black font-medium border-b-2 border-black"
               : "text-[#9F9F9F] font-light"
-          } text-lg font-semibold`}
+          } text-base md:text-2xl  font-semibold`}
           onClick={() => setActiveTab("Additional Information")}
         >
           Additional Information
@@ -86,9 +84,9 @@ const ProductDescription = () => {
         <button
           className={`${
             activeTab === "Reviews"
-              ? "text-black font-medium"
+              ? "text-black font-medium border-b-2 border-black"
               : "text-[#9F9F9F] font-light"
-          } text-lg font-semibold`}
+          } text-base md:text-2xl font-semibold`}
           onClick={() => setActiveTab("Reviews")}
         >
           Reviews

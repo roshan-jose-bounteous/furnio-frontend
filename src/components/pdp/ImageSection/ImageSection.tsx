@@ -14,9 +14,8 @@ const ImageSection = () => {
   const [selectedImage, setSelectedImage] = useState(images[0]);
 
   return (
-    <div className="flex justify-center items-start gap-8 w-1/2">
-      {/* Sidebar with smaller images */}
-      <div className="flex flex-col space-y-4">
+    <div className="flex flex-col-reverse md:flex-row justify-center items-start  gap-8 w-full md:w-1/2">
+      <div className="flex flex-row md:flex-col gap-4">
         {images.map((img, index) => (
           <Image
             key={index}
@@ -33,7 +32,8 @@ const ImageSection = () => {
       </div>
 
       {/* Main image */}
-      <div className="flex items-center justify-center bg-[#F5EDE3] rounded-md h-96 w-full max-w-lg">
+
+      <div className="flex items-center justify-center bg-[#F5EDE3] rounded-md h-64 md:h-96 w-full max-w-lg ">
         <Image
           src={selectedImage}
           width={0}

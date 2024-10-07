@@ -4,8 +4,8 @@ import Button from "./common/Button";
 
 const Footer = () => {
   return (
-    <div className="flex flex-row justify-start gap-16 px-40 py-16 ">
-      <div className="flex flex-col items-start gap-12">
+    <div className="flex flex-col md:flex-row justify-start gap-16 px-10 md:px-40 py-16 ">
+      <div className="flex flex-col items-start gap-4 md:gap-12">
         <Typography
           variant="p"
           text="Furniro"
@@ -25,7 +25,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="flex flex-row gap-36 pr-2">
-        <div className="flex flex-col items-start gap-14 ">
+        <div className="flex flex-col items-start gap-6 md:gap-14 ">
           <Typography
             variant="p"
             className="text-[#9F9F9F] font-poppins font-medium"
@@ -52,7 +52,7 @@ const Footer = () => {
             text="Contact"
           />
         </div>
-        <div className="flex flex-col items-start gap-14 ">
+        <div className="flex flex-col items-start gap-6 md:gap-14 ">
           <Typography
             variant="p"
             className="text-[#9F9F9F] font-poppins font-medium"
@@ -76,7 +76,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex flex-col items-start gap-12 ">
+      <div className="flex flex-col items-start gao-6 md:gap-12 ">
         <Typography
           variant="p"
           className="text-[#9F9F9F] font-poppins font-medium"

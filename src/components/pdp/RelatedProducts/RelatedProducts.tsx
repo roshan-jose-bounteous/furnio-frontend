@@ -20,7 +20,7 @@ const RelatedProducts = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center px-36 py-8 gap-8">
+    <div className="flex flex-col justify-center px-10 md:px-36 py-8 gap-8">
       <Typography
         variant="h3"
         text="Related Products"
@@ -30,7 +30,7 @@ const RelatedProducts = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Show only the products based on the visibleProducts state */}
         {productDetails.slice(0, visibleProducts).map((product, index) => (
-          <ProductCard key={index} product={product} />
+          <ProductCard key={index} product={product} isGridView={true} />
         ))}
       </div>
 
