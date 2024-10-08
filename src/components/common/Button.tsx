@@ -16,7 +16,7 @@ type ButtonProps = {
   children?: ReactNode;
   text?: string;
   onClick?: () => void;
-  disabled?: boolean;
+  disabled?: Boolean;
   className?: string; // Custom class for styling
 };
 

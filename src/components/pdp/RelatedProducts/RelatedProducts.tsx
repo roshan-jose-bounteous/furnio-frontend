@@ -30,7 +30,7 @@ const RelatedProducts = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Show only the products based on the visibleProducts state */}
         {productDetails.slice(0, visibleProducts).map((product, index) => (
-          <ProductCard key={index} product={product} isGridView={true} />
+          <ProductCard key={index} product={product} />
         ))}
       </div>
 
