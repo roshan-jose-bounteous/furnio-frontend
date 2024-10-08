@@ -16,7 +16,7 @@ type ButtonProps = {
   children?: ReactNode;
   text?: string;
   onClick?: () => void;
-  disabled?: Boolean;
+  disabled?: boolean;
   className?: string; // Custom class for styling
 };
 
@@ -26,7 +26,6 @@ const Button = ({
   children,
   className = "",
   onClick,
-  disabled,
 }: ButtonProps) => {
   // Define styles for each variant
   const baseStyles = " focus:outline-none transition duration-300";

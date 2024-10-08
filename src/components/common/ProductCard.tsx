@@ -292,7 +292,6 @@ import Compare from "@/public/assets/icons/Compare";
 import WhiteHeart from "@/public/assets/icons/WhiteHeart";
 import Typography from "@/components/common/Typography";
 import Link from "next/link";
-import { Product } from "@/types/types";
 
 type ProductCardProps = {
   product: {

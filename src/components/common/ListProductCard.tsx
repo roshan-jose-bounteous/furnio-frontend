@@ -1,7 +1,6 @@
 // ListProductCard.tsx
 import React from "react";
 import ProductImage from "@/components/plp/ProductImage/ProductImage";
-import ProductDetails from "@/components/plp/ProductDetails/ProductDetails";
 import Button from "@/components/common/Button";
 import Typography from "./Typography";
 
