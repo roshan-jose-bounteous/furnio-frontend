@@ -29,11 +29,13 @@ const ProductDetails = ({
         text={description}
       />
       <div className="flex flex-row justify-between items-center">
-        <Typography
-          variant="p"
-          className="text-lg font-semibold text-black font-poppins"
-          text={formatCurrency(price)}
-        />
+        {price && (
+          <Typography
+            variant="p"
+            className="text-lg font-semibold text-black font-poppins"
+            text={formatCurrency(price)}
+          />
+        )}
         {originalPrice && (
           <Typography
             variant="p"

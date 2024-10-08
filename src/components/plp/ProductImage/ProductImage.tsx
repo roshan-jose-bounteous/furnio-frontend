@@ -8,6 +8,7 @@ const ProductImage = ({
   productName,
   width,
   height,
+  className,
 }: ProductImageProps) => {
   return (
     <Image
@@ -15,7 +16,7 @@ const ProductImage = ({
       alt={productName}
       width={width}
       height={height}
-      className="w-full h-80 object-cover"
+      className={className}
     />
   );
 };

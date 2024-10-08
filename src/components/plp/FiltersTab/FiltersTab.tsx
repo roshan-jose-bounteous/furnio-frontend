@@ -7,11 +7,15 @@ import ListFilter from "@/public/assets/icons/ListFilter";
 import VerticalDividerLine from "@/public/assets/icons/VerticalDividerLine";
 import ProductList from "@/components/plp/ProductList/ProductList";
 import { Product } from "@/types/types";
+import Pagination from "../Pagination/Pagination";
+import { productDetails } from "@/data/productDetails";
+import Button from "@/components/common/Button";
 
 const FiltersTab = () => {
   const [isGridView, setIsGridView] = useState(true);
   const [showCount, setShowCount] = useState(16);
   const [sortBy, setSortBy] = useState("default");
+  const [currentPage, setCurrentPage] = useState(1); // New state for current page
 
   // Update handleSort to use the Product type
   const handleSort = (products: Product[]) => {
@@ -21,6 +25,13 @@ const FiltersTab = () => {
       return [...products].sort((a, b) => b.price - a.price);
     }
     return products; // default
+  };
+
+  const totalProducts = handleSort(productDetails).length; // Total number of products
+  const totalPages = Math.ceil(totalProducts / showCount); // Total number of pages
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
   };
 
   return (
@@ -37,17 +48,25 @@ const FiltersTab = () => {
             />
           </div>
           {/* Toggle between Grid and List view */}
-          <button onClick={() => setIsGridView(true)}>
+          <Button
+            variant="Default"
+            onClick={() => setIsGridView(true)}
+            className={`p-1 ${isGridView ? "bg-[#e3c530] rounded" : ""}`}
+          >
             <GridFilter />
-          </button>
-          <button onClick={() => setIsGridView(false)}>
+          </Button>
+          <Button
+            variant="Default"
+            onClick={() => setIsGridView(false)}
+            className={`p-1 ${isGridView ? "" : "bg-[#e3c530] rounded"}`}
+          >
             <ListFilter />
-          </button>
+          </Button>
           <VerticalDividerLine />
           <Typography
             variant="p"
             className="font-poppins font-normal text-xs md:text-lg"
-            text={`Showing 1-${showCount} of 32 results`}
+            text={`Showing ${showCount} results`}
           />
         </div>
 
@@ -62,7 +81,10 @@ const FiltersTab = () => {
             <select
               className="bg-white p-1 md:p-3 text-xs md:text-md font-poppins"
               value={showCount}
-              onChange={(e) => setShowCount(Number(e.target.value))}
+              onChange={(e) => {
+                setShowCount(Number(e.target.value));
+                setCurrentPage(1); // Reset to first page when showCount changes
+              }}
             >
               <option value={16}>16</option>
               <option value={8}>8</option>
@@ -80,7 +102,10 @@ const FiltersTab = () => {
             <select
               className="bg-white p-1 md:p-3 text-xs md:text-md font-poppins"
               value={sortBy}
-              onChange={(e) => setSortBy(e.target.value)}
+              onChange={(e) => {
+                setSortBy(e.target.value);
+                setCurrentPage(1); // Reset to first page when sorting changes
+              }}
             >
               <option value="default">Default</option>
               <option value="ascending">Price: Low to High</option>
@@ -95,6 +120,14 @@ const FiltersTab = () => {
         isGridView={isGridView}
         showCount={showCount}
         handleSort={handleSort}
+        currentPage={currentPage} // Pass current page
+      />
+
+      {/* Pagination Component */}
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageChange}
       />
     </div>
   );

@@ -12,6 +12,7 @@ export type ProductListProps = {
   isGridView: boolean;
   showCount: number;
   handleSort: (products: Product[]) => Product[];
+  currentPage: number;
 };
 
 export type ProductImageProps = {
@@ -19,6 +20,7 @@ export type ProductImageProps = {
   productName: string;
   width?: number;
   height?: number;
+  className?: string;
 };
 
 export type ProductDiscountProps = {
@@ -28,6 +30,6 @@ export type ProductDiscountProps = {
 export type ProductDetailsProps = {
   productName: string;
   description: string;
-  price: number;
+  price?: number;
   originalPrice?: number | null;
 };

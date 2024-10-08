@@ -11,10 +11,12 @@ type ButtonProps = {
     | "Colors"
     | "Quantity"
     | "Related"
-    | "Buy";
+    | "Buy"
+    | "Default";
   children?: ReactNode;
   text?: string;
   onClick?: () => void;
+  disabled?: Boolean;
   className?: string; // Custom class for styling
 };
 
@@ -24,6 +26,7 @@ const Button = ({
   children,
   className = "",
   onClick,
+  disabled,
 }: ButtonProps) => {
   // Define styles for each variant
   const baseStyles = " focus:outline-none transition duration-300";
@@ -38,8 +41,9 @@ const Button = ({
     Buy: "font-poppins text-lg border-black border px-4 py-2 rounded-lg",
     Sizes:
       "bg-[#F9F1E7] hover:bg-[#B88E2F] py-2 px-3 rounded-lg text-sm hover:text-white font-poppins",
-    AddToCart: "bg-white text-[#B88E2F] font-poppins px-6 py-2 font-semibold ",
+    AddToCart: "font-poppins px-6 py-2 font-semibold ",
     SortBy: " py-2 px-4 bg-white text-[#9F9F9F]",
+    Default: "",
     Subscribe:
       "text-sm font-medium font-poppins px-0 py-4 uppercase text-black border-b border-black pb-1 hover:text-gray-800 transition-colors ",
   };
