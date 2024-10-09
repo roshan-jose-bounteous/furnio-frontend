@@ -1,4 +1,3 @@
-// src/components/ProductImage.tsx
 import React from "react";
 import Image from "next/image";
 import { ProductImageProps } from "@/types/types";

@@ -27,7 +27,6 @@ const Button = ({
   className = "",
   onClick,
 }: ButtonProps) => {
-  // Define styles for each variant
   const baseStyles = " focus:outline-none transition duration-300";
 
   const variantStyles = {

@@ -1,4 +1,3 @@
-// src/components/ProductDetails.tsx
 import React from "react";
 import Typography from "@/components/common/Typography";
 import { ProductDetailsProps } from "@/types/types";

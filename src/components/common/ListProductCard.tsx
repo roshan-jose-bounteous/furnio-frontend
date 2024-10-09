@@ -3,18 +3,7 @@ import React from "react";
 import ProductImage from "@/components/plp/ProductImage/ProductImage";
 import Button from "@/components/common/Button";
 import Typography from "./Typography";
-
-type ProductCardProps = {
-  product: {
-    id: number;
-    productName: string;
-    description: string;
-    price: number;
-    originalPrice?: number | null;
-    discount?: string | null;
-    imageURL: string;
-  }; // Add this prop to toggle between grid and list view
-};
+import { ProductCardProps } from "@/types/types";
 
 const ListProductCard = ({ product }: ProductCardProps) => {
   return (
@@ -30,9 +19,7 @@ const ListProductCard = ({ product }: ProductCardProps) => {
         />
       </div>
 
-      {/* Product Details on the right */}
       <div className="flex flex-col md:flex-row justify-between w-4/5 pl-4">
-        {/* Product Information */}
         <div className="p-2 md:p-4 flex flex-col gap-2">
           <Typography
             variant="p"
@@ -52,7 +39,6 @@ const ListProductCard = ({ product }: ProductCardProps) => {
             className="text-xs md:text-lg font-semibold text-black font-poppins "
           />
 
-          {/* Always Visible Button in List View */}
           <Button
             variant="AddToCart"
             text="Add to cart"

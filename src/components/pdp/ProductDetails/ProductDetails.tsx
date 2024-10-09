@@ -7,41 +7,43 @@ import TwitterIcon from "@/public/assets/icons/TwitterIcon";
 import VerticalDividerLine from "@/public/assets/icons/VerticalDividerLine";
 import YellowStar from "@/public/assets/icons/YellowStar";
 import React, { useState } from "react";
+import { Product } from "@/types/types";
 
-const ProductDetails = () => {
+interface ProductDetailsProps {
+  product: Product;
+}
+
+const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
+
   return (
     <div className="flex flex-col gap-3 py-2 w-full md:w-1/2">
       <Typography
         variant="h1"
         className="font-poppins text-4xl"
-        text="Asgaard Sofa"
+        text={product.productName}
       />
       <Typography
         variant="p"
         className="font-poppins text-2xl text-[#9F9F9F] font-medium"
-        text="Rs. 250,000.00"
+        text={`Rs. ${product.price.toLocaleString()}.00`}
       />
       <div className="flex flex-row items-center gap-5">
         <div className="flex flex-row items-center gap-2">
-          <YellowStar />
-          <YellowStar />
-          <YellowStar />
-          <YellowStar />
-          <YellowStar />
+          {Array(5).fill(<YellowStar />)}
         </div>
         <VerticalDividerLine />
         <Typography
           variant="p"
-          text="5 Customer Review"
+          text="5 Customer Reviews"
           className="font-poppins text-[#9F9F9F] text-xs"
         />
       </div>
       <Typography
         variant="p"
         className="font-poppins text-sm w-[80%]"
-        text="Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound."
+        text={product.information}
       />
       <Typography
         variant="p"
@@ -49,24 +51,15 @@ const ProductDetails = () => {
         text="Size"
       />
       <div className="flex flex-row justify-start items-center gap-3">
-        <Button
-          variant="Sizes"
-          text="L"
-          className={`${selectedSize == "L" ? "bg-[#B88E2F]" : ""}`}
-          onClick={() => setSelectedSize("L")}
-        />
-        <Button
-          variant="Sizes"
-          text="XL"
-          className={`${selectedSize == "XL" ? "bg-[#B88E2F]" : ""}`}
-          onClick={() => setSelectedSize("XL")}
-        />
-        <Button
-          variant="Sizes"
-          text="XS"
-          className={`${selectedSize == "XS" ? "bg-[#B88E2F]" : ""}`}
-          onClick={() => setSelectedSize("XS")}
-        />
+        {["L", "XL", "XS"].map((size) => (
+          <Button
+            key={size}
+            variant="Sizes"
+            text={size}
+            className={`${selectedSize === size ? "bg-[#B88E2F]" : ""}`}
+            onClick={() => setSelectedSize(size)}
+          />
+        ))}
       </div>
       <Typography
         variant="p"
@@ -108,24 +101,24 @@ const ProductDetails = () => {
         <Button variant="Buy" className="w-3/5 md:w-2/5" text="Add To Cart" />
         <Button variant="Buy" className="w-3/5 md:w-2/5" text="+ Compare" />
       </div>
-      <div className=" border-b border-[#D9D9D9] border-1 my-6" />
+      <div className="border-b border-[#D9D9D9] border-1 my-6" />
       <div className="font-poppins py-2 flex flex-col gap-2 text-[#9F9F9F]">
         <div className="flex flex-row gap-2">
           <Typography variant="p" text="SKU" className="min-w-[100px]" />
-          <Typography variant="p" text=": SS001" />
+          <Typography variant="p" text={`: ${product.SKU}`} /> {/* Use SKU */}
         </div>
         <div className="flex flex-row gap-2">
           <Typography variant="p" text="Category" className="min-w-[100px]" />
-          <Typography variant="p" text=": Sofas" />
+          <Typography variant="p" text={`: ${product.category}`} />{" "}
+          {/* Use category */}
         </div>
         <div className="flex flex-row gap-2">
           <Typography variant="p" text="Tags" className="min-w-[100px]" />
-          <Typography variant="p" text=": Sofa, Chair, Home, Shop" />
+          <Typography variant="p" text={`: ${product.tags}`} /> {/* Use tags */}
         </div>
         <div className="flex flex-row gap-2">
           <Typography variant="p" text="Share" className="min-w-[100px]" />
           <Typography variant="p" text=":" />
-
           <div className="flex flex-row gap-2">
             <FacebookIcon />
             <LinkedinIcon />

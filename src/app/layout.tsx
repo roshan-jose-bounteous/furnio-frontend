@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Client from "./Client";
+import { Router } from "next/router";
 
 export const metadata: Metadata = {
   title: "Furnio RJ",

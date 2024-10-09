@@ -1,8 +1,12 @@
 "use client";
 import Typography from "@/components/common/Typography";
 import React, { useState } from "react";
+import { ProductDescriptionProps } from "@/types/types";
 
-const ProductDescription = () => {
+const ProductDescription: React.FC<ProductDescriptionProps> = ({
+  description,
+  additionalInformation,
+}) => {
   const [activeTab, setActiveTab] = useState("Description");
 
   const renderContent = () => {
@@ -10,34 +14,13 @@ const ProductDescription = () => {
       case "Description":
         return (
           <div className="flex flex-col gap-4 py-6 justify-center items-center w-[70%] mx-auto font-poppins text-[#9F9F9F] ">
-            <Typography
-              variant="p"
-              text="Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn
-              portable active stereo speaker takes the unmistakable look and
-              sound of Marshall, unplugs the chords, and takes the show on the
-              road."
-            />
-            <Typography
-              variant="p"
-              text="Weighing in under 7 pounds, the Kilburn is a lightweight piece of
-              vintage styled engineering. Setting the bar as one of the loudest
-              speakers in its class, the Kilburn is a compact, stout-hearted
-              hero with a well-balanced audio which boasts a clear midrange and
-              extended highs for a sound that is both articulate and pronounced.
-              The analogue knobs allow you to fine tune the controls to your
-              personal preferences while the guitar-influenced leather strap
-              enables easy and stylish travel."
-            />
+            <Typography variant="p" text={description} />
           </div>
         );
       case "Additional Information":
         return (
           <div className="flex flex-col gap-4 py-6 justify-center items-center w-[70%] mx-auto font-poppins text-[#9F9F9F] ">
-            <Typography
-              variant="p"
-              text="Additional information about the product. Includes materials,
-              sizes, colors, and other specific data."
-            />
+            <Typography variant="p" text={additionalInformation} />
           </div>
         );
       case "Reviews":
@@ -45,8 +28,7 @@ const ProductDescription = () => {
           <div className="flex flex-col gap-4 py-6 justify-center items-center w-[70%] mx-auto font-poppins text-[#9F9F9F] ">
             <Typography
               variant="p"
-              text="Here you can read reviews from customers who purchased this
-              product. Rated 4.5 stars on average."
+              text="Here you can read reviews from customers who purchased this product. Rated 4.5 stars on average."
             />
           </div>
         );
