@@ -46,7 +46,6 @@
 "use client";
 import React from "react";
 import ProductCard from "@/components/common/ProductCard";
-import ListViewProduct from "@/components/common/ListProductCard";
 // Assuming you have a ListView component
 import ListProductCard from "@/components/common/ListProductCard";
 import { Product } from "@/middleware/api"; // Import the Product type
@@ -57,11 +56,7 @@ interface ProductListProps {
   showCount: number;
 }
 
-const ProductList: React.FC<ProductListProps> = ({
-  isGridView,
-  products,
-  showCount,
-}) => {
+const ProductList: React.FC<ProductListProps> = ({ isGridView, products }) => {
   return (
     <div className="flex flex-col justify-center px-10 md:px-36 py-8">
       <div
