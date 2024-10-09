@@ -2,35 +2,37 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-const images = [
-  "/assets/images/sofa1.png",
-  "/assets/images/sofa2.png",
-  "/assets/images/sofa3.png",
-  "/assets/images/sofa4.png",
-];
+interface ImageSectionProps {
+  descriptionImages: { alt: string; imageURL: string }[];
+}
 
-const ImageSection = () => {
-  const [selectedImage, setSelectedImage] = useState(images[0]);
+const ImageSection: React.FC<ImageSectionProps> = ({ descriptionImages }) => {
+  const [selectedImage, setSelectedImage] = useState(
+    descriptionImages[0].imageURL
+  );
 
+  console.log("Description: ", descriptionImages);
   return (
-    <div className="flex flex-col-reverse md:flex-row justify-center items-start  gap-8 w-full md:w-1/2">
-      <div className="flex flex-row md:flex-col gap-4">
-        {images.map((img, index) => (
+    <div className="flex flex-col-reverse md:flex-row justify-center items-start gap-5 md:gap-8 w-full md:w-1/2 ">
+      <div className="flex flex-row md:flex-col gap-3 md:gap-4">
+        {descriptionImages.map((img, index) => (
           <Image
             key={index}
-            src={img}
+            src={img.imageURL}
             width={80}
             height={64}
-            alt={`Thumbnail ${index + 1}`}
+            alt={img.alt}
             className={`w-20 h-16 bg-[#F5EDE3] rounded-md object-contain cursor-pointer border-2 ${
-              selectedImage === img ? "border-black" : "border-gray-200"
+              selectedImage === img.imageURL
+                ? "border-black"
+                : "border-gray-200"
             }`}
-            onClick={() => setSelectedImage(img)}
+            onClick={() => setSelectedImage(img.imageURL)}
           />
         ))}
       </div>
 
-      <div className="flex items-center justify-center bg-[#F5EDE3] rounded-md h-64 md:h-96 w-full max-w-lg ">
+      <div className="flex items-center justify-center bg-[#F5EDE3] rounded-md h-64 md:h-96 w-full max-w-lg">
         <Image
           src={selectedImage}
           width={0}

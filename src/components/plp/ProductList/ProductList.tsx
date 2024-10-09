@@ -15,15 +15,13 @@ const ProductList: React.FC<ProductListProps> = ({ isGridView, products }) => {
             : "flex flex-col gap-10 md:px-20"
         }`}
       >
-        {products.map((product, index) => (
-          <Link key={index} href={`/pdp?id=${product.id}`}>
-            {isGridView ? (
-              <ProductCard key={index} product={product} />
-            ) : (
-              <ListProductCard key={index} product={product} />
-            )}
-          </Link>
-        ))}
+        {products.map((product, index) =>
+          isGridView ? (
+            <ProductCard key={index} product={product} />
+          ) : (
+            <ListProductCard key={index} product={product} />
+          )
+        )}
       </div>
     </div>
   );

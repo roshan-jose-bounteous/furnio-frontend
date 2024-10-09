@@ -9,9 +9,18 @@ export interface Product {
   imageURL: string;
   information: string;
   additionalInformation: string;
+  descriptionImages: {
+    alt: string;
+    imageURL: string;
+  }[];
+  additionalImages: {
+    alt: string;
+    imageURL: string;
+  }[];
   SKU: string;
+  sizes: string[];
   category: string;
-  tags: string;
+  tags: string[];
 }
 
 export type ProductCardProps = {

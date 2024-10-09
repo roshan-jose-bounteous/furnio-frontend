@@ -32,7 +32,7 @@ const Button = ({
   const variantStyles = {
     Pagination:
       "bg-[#F9F1E7] hover:bg-[#B88E2F] py-2 px-4 rounded-lg text-lg hover:text-white font-poppins",
-    Colors: "rounded-full px-4 py-4",
+    Colors: "rounded-full px-2 py-2",
     Related:
       "bg-white text-[#B88E2F] font-poppins px-6 py-2 font-semibold border-[#B88E2F] border-2 ",
     Quantity: "font-poppins border-black border rounded-md px-2 py-2",
