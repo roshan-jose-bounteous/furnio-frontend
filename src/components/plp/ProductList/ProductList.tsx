@@ -16,7 +16,7 @@ const ProductList: React.FC<ProductListProps> = ({ isGridView, products }) => {
         }`}
       >
         {products.map((product, index) => (
-          <Link href={`/pdp?id=${product.id}`}>
+          <Link key={index} href={`/pdp?id=${product.id}`}>
             {isGridView ? (
               <ProductCard key={index} product={product} />
             ) : (

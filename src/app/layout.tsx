@@ -2,7 +2,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Client from "./Client";
-import { Router } from "next/router";
 
 export const metadata: Metadata = {
   title: "Furnio RJ",
@@ -15,20 +14,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Create a QueryClient instance
-
   return (
     <html lang="en">
       <body className={`antialiased`}>
-        <Client>
-          {/* Wrap with QueryClientProvider
-          <QueryClientProvider client={queryClient}>
-            <Navbar />
-            {children}
-            <Footer />
-          </QueryClientProvider> */}
-          {children}
-        </Client>
+        <Client>{children}</Client>
       </body>
     </html>
   );
