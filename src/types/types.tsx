@@ -5,7 +5,7 @@ export type Product = {
   price: number;
   originalPrice?: number | null;
   discount?: string | null;
-  imageUrl: string;
+  imageURL: string;
 };
 
 export type ProductListProps = {

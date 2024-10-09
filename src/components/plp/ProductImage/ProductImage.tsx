@@ -10,6 +10,7 @@ const ProductImage = ({
   height,
   className,
 }: ProductImageProps) => {
+  console.log("url: ", imageUrl);
   return (
     <Image
       src={imageUrl}

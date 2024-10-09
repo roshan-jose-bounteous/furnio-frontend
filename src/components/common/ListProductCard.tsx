@@ -12,7 +12,7 @@ type ProductCardProps = {
     price: number;
     originalPrice?: number | null;
     discount?: string | null;
-    imageUrl: string;
+    imageURL: string;
   }; // Add this prop to toggle between grid and list view
 };
 
@@ -22,7 +22,7 @@ const ListProductCard = ({ product }: ProductCardProps) => {
       {/* Image on the left */}
       <div className="">
         <ProductImage
-          imageUrl={product.imageUrl}
+          imageUrl={product.imageURL}
           productName={product.productName}
           width={1440}
           height={328}
