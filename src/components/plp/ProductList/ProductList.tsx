@@ -3,8 +3,6 @@ import React from "react";
 import ProductCard from "@/components/common/ProductCard";
 import ListProductCard from "@/components/common/ListProductCard";
 import { ProductListProps } from "@/types/types";
-import Link from "next/link";
-
 const ProductList: React.FC<ProductListProps> = ({ isGridView, products }) => {
   return (
     <div className="flex flex-col justify-center px-10 md:px-36 py-8">
