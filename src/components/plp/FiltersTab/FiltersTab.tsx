@@ -166,8 +166,8 @@ const FiltersTab: React.FC = () => {
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="p-2 border border-gray-300 rounded mt-2 font-poppins"
-            placeholder="Search products by name"
+            className="py-2 px-4 text-left text-sm border border-gray-300 rounded mt-2 font-poppins"
+            placeholder="Search by name"
           />
         </div>
       )}
